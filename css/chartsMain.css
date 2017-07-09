@@ -1,0 +1,49 @@
+#chartsMain
+{
+	display: none;
+	width: 860px;
+	height: 100%;
+	background-color: #d9d9d9;
+	border-radius: 3%;
+}
+#chartsMain .header
+	{
+		text-align:center;
+		width:100%;
+		padding-top: 30px;
+		font-size: 150%;
+	}
+	#chartsMain .subBody
+	{
+		width: 90%;
+		height: 90%;
+		padding: 30px;
+		
+	}
+	#myForm0 , #myForm1 , #myForm2
+	{
+		margin: 0 auto;
+		text-align:center;
+	}
+	#labelTabel
+	{
+		width: 450px;
+		margin-left: 211px;
+		position: relative;
+		bottom: 94px;
+	}
+
+#susResult
+{
+	position: relative;
+	left: 306px;
+	display: inline-block;
+}
+	#colorMe
+	{
+		padding: 6px;
+		border-radius: 20%;
+		background-color: #888;
+		font-size: 200%;
+		border: 2px solid #666;
+	}

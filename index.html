@@ -1,0 +1,296 @@
+<!--@author Artuk Kakhorov, Nicolas Andreas Tamm Garetto -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Cooking with BlaBla</title>
+		<link rel="icon" type="image/ico" href="hat.ico"/>
+		<link href="css/main.css" rel="stylesheet">
+		<link href="css/chartsMain.css" rel="stylesheet">
+		<link href="css/susMain.css" rel="stylesheet">
+		<link href="css/formularMain.css" rel="stylesheet">
+		<link href="css/buttons.css" rel="stylesheet">
+		<link href="css/main3DChart.css" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="js/velocity.min.js"></script> 		 
+		<script type = "text/javascript" src="js/main.js"></script> 
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Amatica SC' rel='stylesheet'>
+	</head>
+
+	<body>
+		<div id="title">
+		 	BlaBlaCooking <span style="font-size: 20%; position:relative; bottom: 35px; right: 20px;">®</span>
+		</div>
+
+		<div id="mainBody">
+			<div id="formularMain">
+				<div class="header">We would like to know more about you.</div>
+				<hr>
+				<div class="subBody">
+					<table>
+						<tr>
+							<td>Your name, please:</td>
+							<td>
+								<input id="firstName" type="text" placeholder="My friends call me..."> , 
+								<input id="lastName" type="text" placeholder="But my family name is...">
+							</td>
+						</tr>
+						<tr>
+							<td>Sir or Madame?</td>
+							<td> 
+								<form id="myForm">
+									<input type="radio" name="gender" value="male"> I'm a MAN!<br>
+									<input type="radio" name="gender" value="female"> Treat me like a lady<br>
+									<input type="radio" name="gender" value="other"> Dunno dont care
+							</form> 
+							</td>
+						</tr>
+						<tr>
+							<td>Nationality?</td>
+							<td><input id="nationality" type="text" placeholder="Best country in the world"></td>
+						</tr>
+						<tr>
+							<td>How long ago was that?</td>
+							<td><input id="age" type="number"> years ago.</td>
+						</tr>
+					</table>
+					<button id="formularButton"class="nextButton" onclick="formularCheck()">That's enough </button>
+				</div>			
+			</div>
+			<div id="susMain">
+				<div class="header">Would you please evaluate your experience with us?</div>
+				<hr>
+				<div class="subBody">
+					<table id="susTable">
+					<tr>
+						<td> What do you think of these statements?</td>
+						<td> Strongly disagree </td>
+						<td> Somewhat disagree</td>
+						<td> Dont agree or disagree</td>
+						<td> Somewhat agree</td>
+						<td> Strongly agree</td>
+					</tr>
+					<tr>
+						<td> I see myself using this Site again.</td>
+						<td id="f01v0" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f02v1" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f03v2" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f04v3" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f05v4" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+					</tr>
+					<tr>
+						<td>I find the system overly-complex.</td>
+						<td id="f11v4" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f12v3" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f13v2" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f14v1" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f15v0" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+					</tr>
+					<tr>
+						<td> I think the system is easy to use.</td>
+						<td id="f21v0" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f22v1" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f23v2" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f24v3" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f25v4" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+					</tr>
+					<tr>
+						<td> I would need Tech Support for this sites usage</td>
+						<td id="f31v4" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f32v3" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f33v2" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f34v1" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f35v0" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+					</tr>
+					<tr>
+						<td> I find the functions in this sites well integrated</td>
+						<td id="f41v0" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f42v1" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f43v2" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f44v3" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f45v4" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+					</tr>
+					<tr>
+						<td> I found a lot of inconsistencies within the system.</td>
+						<td id="f51v4" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f52v3" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f53v2" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f54v1" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f55v0" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+					</tr>
+					<tr>
+						<td>Most people could easily master the controls of this site.</td>
+						<td id="f61v0" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f62v1" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f63v2" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f64v3" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f65v4" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+					</tr>
+					<tr>
+						<td> I find the found the controls rather awkward to use.</td>
+						<td id="f71v4" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f72v3" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f73v2" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f74v1" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f75v0" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+					</tr>
+					<tr>
+						<td> I felt secure during the usage of this site.</td>
+						<td id="f81v0" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f82v1" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f83v2" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f84v3" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f85v4" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+					</tr>
+					<tr>
+						<td>I spent a lot of time learning before I could use the system.</td>
+						<td id="f91v4" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f92v3" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f93v2" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f94v1" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+						<td id="f90v0" class="inputField" onclick="susHandler(this.id)">&nbsp</td>
+					</tr>
+					</table>
+				</div>
+				<button id="susButton" class="nextButton" onclick="susCheck()">Submit </button>
+			</div>
+			<div id="chartsMain">
+				<div class="header"> Here is what people think of us! </div>
+				<hr>
+				<div class="subBody">
+					<div id="stage">
+						<div id="chart">
+							<div class="bar" id="b0" style="left: 0px; background: rgba(255,255,0,0.8);
+							-webkit-transform: translateZ(60px); -moz-transform: translateZ(0px)">
+								<div class="barfront" style="height: 0px;"></div>
+								<div class="barback" style="height: 0px;"></div>
+								<div class="barright" style="width: 0px;"></div>
+								<div class="barleft" style="width: 0px;"></div>
+								<span>10</span>
+							</div>
+							<div class="bar" id="b1" style="left: 40px; background: rgba(255,255,0,0.8);
+							-webkit-transform: translateZ(60px); -moz-transform: translateZ(0px)">
+								<div class="barfront" style="height: 0px;"></div>
+								<div class="barback" style="height: 0px;"></div>
+								<div class="barright" style="width: 0px;"></div>
+								<div class="barleft" style="width: 0px;"></div>
+								<span>10</span>
+							</div>
+							<div class="bar" id="b2" style="left: 80px; background: rgba(255,0,0,0.8);
+							-webkit-transform: translateZ(80px); -moz-transform: translateZ(0px);">
+								<div class="barfront" style="height: 0px;"></div>
+								<div class="barback" style="height: 0px;"></div>
+								<div class="barright" style="width: 0px;"></div>
+								<div class="barleft" style="width: 0px;"></div>
+								<span>10</span>
+							</div>
+
+							<div class="bar" id="b3"style="left: 120px; background: rgba(0,127,255,0.8);
+								-webkit-transform: translateZ(120px); -moz-transform: translateZ(0px);">
+								<div class="barfront" style="height: 0px;"></div>
+								<div class="barback" style="height: 0px;"></div>
+								<div class="barright" style="width: 0px;"></div>
+								<div class="barleft" style="width: 0px;"></div>
+								<span>10</span>
+							</div>
+
+							<div class="bar" id="b4" style="left: 160px; background: rgba(255,255,0,0.8);
+							-webkit-transform: translateZ(40px); -moz-transform: translateZ(0px);">
+								<div class="barfront" style="height: 0px;"></div>
+								<div class="barback" style="height: 0px;"></div>
+								<div class="barright" style="width: 0px;"></div>
+								<div class="barleft" style="width: 0px;"></div>
+								<span>10</span>
+							</div>
+
+							<div class="bar" id="b5" style="left: 200px; background: rgba(255,255,0,0.8);
+							-webkit-transform: translateZ(60px); -moz-transform: translateZ(0px)">
+								<div class="barfront" style="height: 0px;"></div>
+								<div class="barback" style="height: 0px;"></div>
+								<div class="barright" style="width: 0px;"></div>
+								<div class="barleft" style="width: 0px;"></div>
+								<span>10</span>
+							</div>
+							<div class="bar" id="b6" style="left: 240px; background: rgba(255,255,0,0.8);
+							-webkit-transform: translateZ(60px); -moz-transform: translateZ(0px)">
+								<div class="barfront" style="height: 0px;"></div>
+								<div class="barback" style="height: 0px;"></div>
+								<div class="barright" style="width: 0px;"></div>
+								<div class="barleft" style="width: 0px;"></div>
+								<span>10</span>
+							</div>
+							<div class="bar" id="b7" style="left: 280px; background: rgba(255,255,0,0.8);
+							-webkit-transform: translateZ(60px); -moz-transform: translateZ(0px)">
+								<div class="barfront" style="height: 0px;"></div>
+								<div class="barback" style="height: 0px;"></div>
+								<div class="barright" style="width: 0px;"></div>
+								<div class="barleft" style="width: 0px;"></div>
+								<span>10</span>
+							</div>
+							<div class="bar" id="b8" style="left: 320px; background: rgba(255,255,0,0.8);
+							-webkit-transform: translateZ(60px); -moz-transform: translateZ(0px)">
+								<div class="barfront" style="height: 0px;"></div>
+								<div class="barback" style="height: 0px;"></div>
+								<div class="barright" style="width: 0px;"></div>
+								<div class="barleft" style="width: 0px;"></div>
+								<span>10</span>
+							</div>
+							<div class="bar" id="b9" style="left: 360px; background: rgba(255,255,0,0.8);
+							-webkit-transform: translateZ(60px); -moz-transform: translateZ(0px)">
+								<div class="barfront" style="height: 0px;"></div>
+								<div class="barback" style="height: 0px;"></div>
+								<div class="barright" style="width: 0px;"></div>
+								<div class="barleft" style="width: 0px;"></div>
+								<span>10</span>
+							</div>
+						</div>
+						<table id="labelTabel">
+							<tbody>
+								<tr>
+									<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+									<td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+								</tr>
+	         			 	</tbody>
+						</table>
+					<div id="susResult"> SUS score: <span id="colorMe"></span> </div>
+					</div>
+					<hr>
+					<div class="header" style="padding-top:0px;"> Demographics </div>
+					<hr>
+					<form id="myForm0">
+						<input type="checkbox" value="you" id="youPeople" name="check" onclick="createSettingsObject()" checked/>
+							<label for="youPeople">You</label>
+						<input type="checkbox" value="others" id="otherPeople" name="check" onclick="createSettingsObject()"checked/>
+							<label for="otherPeople">Other People</label>
+					</form>
+					<form id="myForm1">
+						<input type="checkbox" value="male" id="genderMale" name="check" onclick="createSettingsObject()" checked/>
+							<label for="genderMale">Male</label>
+						<input type="checkbox" value="female" id="genderFemale" name="check" onclick="createSettingsObject()"checked/>
+							<label for="genderFemale">Female</label>
+						<input type="checkbox" value="others" id="genderOthers" name="check" onclick="createSettingsObject()"checked/>
+							<label for="genderOthers">Others</label>
+					</form> 
+					<form id="myForm2">
+						<input type="checkbox" value="young" id="youngAge" name="check1" onclick="createSettingsObject()" checked/>
+							<label for="youngAge">0-25 yrs.</label>
+						<input type="checkbox" value="middle" id="middleAge" name="check1" onclick="createSettingsObject()"checked/>
+							<label for="middleAge">25-50 yrs.</label>
+						<input type="checkbox" value="old" id="oldAge" name="check1" onclick="createSettingsObject()"checked/>
+							<label for="oldAge">50+ yrs.</label>
+					</form>
+					<hr>
+					<button id="againButton" class="nextButton" onclick="document.getElementById('clickAudio').play();again()">Complain again! </button> 
+					<button id="addDummiesButton" class="nextButton" onclick="document.getElementById('clickAudio').play();addDummies()">See other peoples complaints! </button>
+					
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<span style="font-size:60%; position:relative; right:10px; bottom:5px;">©</span>BlaBlaCooking 2017
+		</div>
+		<audio id='clickAudio' src="sounds/click.mp3"/>
+		<audio id='errorAudio' src="sounds/error.mp3"/>
+	</body>
+</html>

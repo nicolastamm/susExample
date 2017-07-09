@@ -1,0 +1,57 @@
+#susMain
+{
+	display: none;
+	width: 860px;
+	height: 100%;
+	background-color: #d9d9d9;
+	border-radius: 3%;
+}
+	#susMain .header
+	{
+		text-align:center;
+		width:100%;
+		padding-top: 30px;
+		font-size: 150%;
+	}
+	#susMain .subBody
+	{
+		width: 820px;
+		height: 90%;
+		padding:20px;
+		
+	}
+		#susMain .subBody > table
+		{
+			border: 4px solid #000;
+			border-collapse: collapse;
+		}
+		#susMain .subBody > table >tbody> tr> td
+		{
+			border: 2px solid #000;
+		}
+		#susMain .subBody > table >tbody tr:first-child > td ,
+		#susMain .subBody > table >tbody tr > td:first-child
+		{
+			font-size: 80%;
+			font-weight: bold;
+			background-image:
+			linear-gradient(45deg, #666 25%, transparent 25%), 
+			linear-gradient(-45deg, #666 25%, transparent 25%), 
+			linear-gradient(45deg, transparent 75%, #666 75%), 
+			linear-gradient(-45deg, transparent 75%, #666 75%);
+			background-size: 2px 2px;
+			background-position: 0 0, 1px 0, 1px -1px, 0px 1px;
+		}
+		#susMain .subBody > table >tbody tr:first-child > td{text-align:center;}
+		
+		.inputField
+		{
+			height: 95px;
+			width: 115px;
+			text-align:center;
+			font-weight: bold;
+		}
+		.inputField:hover
+		{
+			background-color: #b7b7b7 !important;
+		}
